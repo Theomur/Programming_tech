@@ -1,13 +1,24 @@
 #include "Keeper.h"
+#include <iostream>
 
-Keeper::Keeper() : size(0), familyTreeList(nullptr) {}
+Keeper::Keeper() : size(0), familyTreeList(nullptr) {
+    std::cout << "Keeper constructor called\n";
+}
 
 Keeper::~Keeper() {
+    std::cout << "Keeper destructor called\n";
+
     for (int i = 0; i < size; i++) {
         delete familyTreeList[i];
     }
     delete[] familyTreeList;
 }
+
+class EmptyFamilyException : public std::exception {
+    const char* what() const throw() {
+        return "You cant delete member from unexisting family";
+    }
+};
 
 void Keeper::addFamilyTree() {
     FamilyTree* newFamilyTree = new FamilyTree();
@@ -24,9 +35,9 @@ void Keeper::addFamilyTree() {
 
 void Keeper::deleteFamilyTree(int index) {
     if (index < 0 || index >= size) {
-        // Handle exception
-        return;
+        throw InvalidIndexException();
     }
+
     delete familyTreeList[index];
     for (int i = index; i < size - 1; i++) {
         familyTreeList[i] = familyTreeList[i + 1];

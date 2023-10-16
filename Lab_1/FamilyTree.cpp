@@ -1,7 +1,14 @@
 #include "FamilyTree.h"
 #include <iostream>
 
-FamilyTree::FamilyTree() : name(""), parents(""), spouse(""), children(""), dateOfBirth(""), dateOfDeath(""), age(0) {}
+FamilyTree::FamilyTree() : name(""), parents(""), spouse(""), children(""), dateOfBirth(""), dateOfDeath(""), age(0) {
+    std::cout << "FamilyTree constructor called\n";
+}
+
+FamilyTree::~FamilyTree() {
+    std::cout << "FamilyTree destructor called\n";
+}
+
 
 void FamilyTree::input() {
     while (true)
@@ -35,6 +42,13 @@ void FamilyTree::input() {
         std::cout << "Enter age: ";
         std::cin >> age;
 
+        if (std::cin.fail()) {
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << "\n\nInvalid input. Please ensure data is correct\n\n";
+            continue;
+        }
+
         break;
     }
 }
@@ -43,7 +57,7 @@ void FamilyTree::display() {
     std::cout << "Name: " << name << std::endl;
     std::cout << "Parents: " << parents << std::endl;
     std::cout << "Spouse: " << spouse << std::endl;
-    std::cout << "Childrens: " << children << std::endl;
+    std::cout << "Children: " << children << std::endl;
     std::cout << "Date of Birth: " << dateOfBirth << std::endl;
     std::cout << "Date of Death: " << dateOfDeath << std::endl;
     std::cout << "Age: " << age << std::endl;

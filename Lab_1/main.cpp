@@ -20,7 +20,13 @@ int main() {
             std::cout << "Enter index of Family Tree to delete: ";
             int index;
             std::cin >> index;
-            keeper.deleteFamilyTree(index);
+            try {
+                keeper.deleteFamilyTree(index);
+            }
+            catch (InvalidIndexException& e) {
+                std::cout << e.what() << std::endl;
+            }
+
             break;
         case 3:
             keeper.displayFamilyTrees();
@@ -29,7 +35,13 @@ int main() {
             isRunning = false;
             break;
         default:
-            std::cout << "Invalid choice\n";
+            std::cout << "\n\nInvalid choice\n\n";
+        }
+
+        if (std::cin.fail()) {
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << "\n\Please ensure you entered a number\n\n";
         }
     }
     return 0;

@@ -13,6 +13,7 @@ private:
 
 public:
     FamilyTree();
+    ~FamilyTree();
     void input() override;
     void display() override;
     // Getters and Setters for each member variable

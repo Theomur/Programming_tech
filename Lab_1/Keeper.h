@@ -12,3 +12,9 @@ public:
     void deleteFamilyTree(int index);
     void displayFamilyTrees();
 };
+
+class InvalidIndexException : public std::exception {
+    const char* what(){
+        return "Invalid index entered for FamilyTree deletion.";
+    }
+};
