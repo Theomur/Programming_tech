@@ -18,20 +18,20 @@ int main() {
         std::cin >> choice;
         switch (choice) {
         case 1:
-            keeper.addFamilyTree();
+            keeper.addFamilyMember();
             break;
         case 2:
             std::cout << "Enter index of Family Tree to delete: ";
             std::cin >> index;
             try {
-                keeper.deleteFamilyTree(index);
+                keeper.deleteFamilyMember(index);
             }
             catch (Exception& e) {
                 std::cout << "\nWrong index\n" << std::endl;
             }
             break;
         case 3:
-            keeper.displayFamilyTrees();
+            keeper.displayFamilyTree();
             break;
         case 4:
             std::cout << "Enter index of Family Tree to redact: ";
@@ -39,16 +39,18 @@ int main() {
             if (std::cin.fail())
                 break;
             try {
-                keeper.redactFamilyTree(index);
+                keeper.redactFamilyMember(index);
             }
             catch (Exception& e) {
                 std::cout << "\nWrong index\n" << std::endl;
             }
             break;
         case 5:
-            // сохранение
+            keeper.saveToFile();
+            break;
         case 6:
-            // загрузка
+            keeper.restoreFromFile();
+            break;
         case 7:
             isRunning = false;
             break;

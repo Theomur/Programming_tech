@@ -69,3 +69,15 @@ void FamilyTree::display() {
     std::cout << "Date of Death: " << dateOfDeath << std::endl;
     std::cout << "Age: " << age << std::endl;
 }
+
+std::string FamilyTree::saveString() {
+    std::string combined = name + "\n" +
+        parents + "\n" +
+        spouse + "\n" +
+        children + "\n" +
+        dateOfBirth + "\n" +
+        dateOfDeath + "\n" +
+        std::to_string(age) + "\n";
+
+    return combined;
+}

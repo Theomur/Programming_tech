@@ -1,5 +1,7 @@
 #include "Keeper.h"
 #include <iostream>
+#include <fstream>
+#include <string>
 
 Keeper::Keeper() : size(0), familyTreeList(nullptr) {
     std::cout << "Keeper constructor called\n";
@@ -14,7 +16,7 @@ Keeper::~Keeper() {
     delete[] familyTreeList;
 }
 
-void Keeper::addFamilyTree() {
+void Keeper::addFamilyMember() {
     FamilyTree* newFamilyTree = new FamilyTree();
     newFamilyTree->input();
     FamilyTree** newFamilyTreeList = new FamilyTree * [size + 1];
@@ -27,7 +29,7 @@ void Keeper::addFamilyTree() {
     size++;
 }
 
-void Keeper::deleteFamilyTree(int index) {
+void Keeper::deleteFamilyMember(int index) {
     if (index < 0 || index >= size) {
         throw Exception();
     }
@@ -39,7 +41,7 @@ void Keeper::deleteFamilyTree(int index) {
     size--;
 }
 
-void Keeper::displayFamilyTrees() {
+void Keeper::displayFamilyTree() {
     for (int i = 0; i < size; i++) {
         std::cout << "\nIndex: " << i << "\n" << std::endl;
         familyTreeList[i]->display();
@@ -47,7 +49,7 @@ void Keeper::displayFamilyTrees() {
     std::cout << "\n" << std::endl;
 }
 
-void Keeper::redactFamilyTree(int index) {
+void Keeper::redactFamilyMember(int index) {
     if (index < 0 || index >= size) {
         throw Exception();
     }
@@ -64,4 +66,32 @@ void Keeper::redactFamilyTree(int index) {
     newFamilyTreeList[index] = newFamilyTree;
     delete[] familyTreeList;
     familyTreeList = newFamilyTreeList;
+}
+
+void Keeper::saveToFile() {
+    std::ofstream file("File.txt");
+
+    if (file.is_open()) {
+        for (int i = 0; i < size; i++) 
+            file << size << familyTreeList[i]->saveString();
+        file.close();
+    }
+    else {
+        std::cout << "Unable to open file";
+    }
+}
+
+void Keeper::restoreFromFile() {
+    std::string line;
+    std::ifstream file("familyTreeList.txt");
+
+    if (file.is_open()) {
+        while (getline(file, line)) {
+            //---------
+        }
+        file.close();
+    }
+    else {
+        std::cout << "Unable to open file";
+    }
 }

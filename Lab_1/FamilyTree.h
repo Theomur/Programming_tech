@@ -16,5 +16,6 @@ public:
     ~FamilyTree();
     void input() override;
     void display() override;
+    std::string saveString();
     // Getters and Setters for each member variable
 };

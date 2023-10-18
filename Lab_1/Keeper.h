@@ -8,10 +8,12 @@ private:
 public:
     Keeper();
     ~Keeper();
-    void addFamilyTree();
-    void deleteFamilyTree(int index);
-    void displayFamilyTrees();
-    void redactFamilyTree(int index);
+    void addFamilyMember();
+    void deleteFamilyMember(int index);
+    void displayFamilyTree();
+    void redactFamilyMember(int index);
+    void saveToFile();
+    void restoreFromFile();
 };
 
 class Exception : public std::exception {};
