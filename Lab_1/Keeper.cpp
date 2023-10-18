@@ -14,12 +14,6 @@ Keeper::~Keeper() {
     delete[] familyTreeList;
 }
 
-class EmptyFamilyException : public std::exception {
-    const char* what() const throw() {
-        return "You cant delete member from unexisting family";
-    }
-};
-
 void Keeper::addFamilyTree() {
     FamilyTree* newFamilyTree = new FamilyTree();
     newFamilyTree->input();
@@ -51,4 +45,23 @@ void Keeper::displayFamilyTrees() {
         familyTreeList[i]->display();
     }
     std::cout << "\n" << std::endl;
+}
+
+void Keeper::redactFamilyTree(int index) {
+    if (index < 0 || index >= size) {
+        throw Exception();
+    }
+
+    FamilyTree* newFamilyTree = new FamilyTree();
+    newFamilyTree->input();
+    FamilyTree** newFamilyTreeList = new FamilyTree * [size];
+    for (int i = 0; i < size; i++) {
+        if (i != index)
+            newFamilyTreeList[i] = familyTreeList[i];
+        else
+            newFamilyTreeList[i] = newFamilyTree;
+    }
+    newFamilyTreeList[index] = newFamilyTree;
+    delete[] familyTreeList;
+    familyTreeList = newFamilyTreeList;
 }

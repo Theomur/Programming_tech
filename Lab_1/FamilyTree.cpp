@@ -1,4 +1,4 @@
-#include "FamilyTree.h"
+#include "Keeper.h"
 #include <iostream>
 
 FamilyTree::FamilyTree() : name(""), parents(""), spouse(""), children(""), dateOfBirth(""), dateOfDeath(""), age(0) {
@@ -37,10 +37,17 @@ void FamilyTree::input() {
         std::cout << "Enter date of death (enter 0 if person is alive): ";
         std::cin >> dateOfDeath;
         if (dateOfDeath == "0")
-            dateOfDeath = "";
+            dateOfDeath = "None";
 
-        std::cout << "Enter age: ";
-        std::cin >> age;
+        while (true)
+        {
+            std::cout << "Enter age: ";
+            std::cin >> age;
+            if (age < 0)
+                std::cout << "Cant have negative age. Repeat enetering data";
+            else
+                break;
+        }
 
         if (std::cin.fail()) {
             std::cin.clear();

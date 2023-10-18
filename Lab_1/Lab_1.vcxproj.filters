@@ -24,12 +24,6 @@
     <ClInclude Include="Keeper.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="FamilyTree — копия.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="Keeper — копия.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="FamilyTree.cpp">
@@ -39,12 +33,6 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="FamilyTree — копия.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Keeper — копия.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

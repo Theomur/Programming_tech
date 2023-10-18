@@ -11,6 +11,7 @@ public:
     void addFamilyTree();
     void deleteFamilyTree(int index);
     void displayFamilyTrees();
+    void redactFamilyTree(int index);
 };
 
 class Exception : public std::exception {};

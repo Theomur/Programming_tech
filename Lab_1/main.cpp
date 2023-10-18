@@ -4,6 +4,7 @@
 int main() {
     Keeper keeper;
     bool isRunning = true;
+    int index;
     while (isRunning) {
         std::cout << "1. Add Family member\n";
         std::cout << "2. Delete Family member\n";
@@ -21,7 +22,6 @@ int main() {
             break;
         case 2:
             std::cout << "Enter index of Family Tree to delete: ";
-            int index;
             std::cin >> index;
             try {
                 keeper.deleteFamilyTree(index);
@@ -29,13 +29,22 @@ int main() {
             catch (Exception& e) {
                 std::cout << "\nWrong index\n" << std::endl;
             }
-
             break;
         case 3:
             keeper.displayFamilyTrees();
             break;
         case 4:
-            // редактировать члена семьи
+            std::cout << "Enter index of Family Tree to redact: ";
+            std::cin >> index;
+            if (std::cin.fail())
+                break;
+            try {
+                keeper.redactFamilyTree(index);
+            }
+            catch (Exception& e) {
+                std::cout << "\nWrong index\n" << std::endl;
+            }
+            break;
         case 5:
             // сохранение
         case 6:
