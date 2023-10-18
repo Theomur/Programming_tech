@@ -7,8 +7,11 @@ int main() {
     while (isRunning) {
         std::cout << "1. Add Family member\n";
         std::cout << "2. Delete Family member\n";
-        std::cout << "3. Display Family members\n";
-        std::cout << "4. Exit\n";
+        std::cout << "3. Display Family\n";
+        std::cout << "4. Redact Family member\n";
+        std::cout << "5. Save in file\n";
+        std::cout << "6. Load from file\n";
+        std::cout << "7. Exit\n";
         std::cout << "Enter your choice: ";
         int choice;
         std::cin >> choice;
@@ -23,8 +26,8 @@ int main() {
             try {
                 keeper.deleteFamilyTree(index);
             }
-            catch (InvalidIndexException& e) {
-                std::cout << e.what() << std::endl;
+            catch (Exception& e) {
+                std::cout << "\nWrong index\n" << std::endl;
             }
 
             break;
@@ -32,6 +35,12 @@ int main() {
             keeper.displayFamilyTrees();
             break;
         case 4:
+            // редактировать члена семьи
+        case 5:
+            // сохранение
+        case 6:
+            // загрузка
+        case 7:
             isRunning = false;
             break;
         default:
