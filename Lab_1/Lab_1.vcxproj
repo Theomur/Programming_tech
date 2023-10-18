@@ -128,11 +128,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Base.h" />
+    <ClInclude Include="FamilyTree — копия.h" />
     <ClInclude Include="FamilyTree.h" />
+    <ClInclude Include="Keeper — копия.h" />
     <ClInclude Include="Keeper.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="FamilyTree — копия.cpp" />
     <ClCompile Include="FamilyTree.cpp" />
+    <ClCompile Include="Keeper — копия.cpp" />
     <ClCompile Include="Keeper.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>

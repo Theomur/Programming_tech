@@ -1,16 +1,16 @@
-#include "FamilyTree.h"
+#include "Keeper.h"
 #include <iostream>
 
-FamilyTree::FamilyTree() : name(""), parents(""), spouse(""), children(""), dateOfBirth(""), dateOfDeath(""), age(0) {
-    std::cout << "FamilyTree constructor called\n";
+Keeper::Keeper() : name(""), parents(""), spouse(""), children(""), dateOfBirth(""), dateOfDeath(""), age(0) {
+    std::cout << "Keeper constructor called\n";
 }
 
-FamilyTree::~FamilyTree() {
-    std::cout << "FamilyTree destructor called\n";
+Keeper::~Keeper() {
+    std::cout << "Keeper destructor called\n";
 }
 
 
-void FamilyTree::input() {
+void Keeper::input() {
     while (true)
     {
         std::cout << "Enter name: ";
@@ -53,7 +53,7 @@ void FamilyTree::input() {
     }
 }
 
-void FamilyTree::display() {
+void Keeper::display() {
     std::cout << "Name: " << name << std::endl;
     std::cout << "Parents: " << parents << std::endl;
     std::cout << "Spouse: " << spouse << std::endl;

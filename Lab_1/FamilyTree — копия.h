@@ -1,7 +1,7 @@
 #include "Base.h"
 #include <string>
 
-class FamilyTree : public Base {
+class Keeper : public Base {
 private:
     std::string name;
     std::string parents;
@@ -12,8 +12,8 @@ private:
     int age;
 
 public:
-    FamilyTree();
-    ~FamilyTree();
+    Keeper();
+    ~Keeper();
     void input() override;
     void display() override;
     // Getters and Setters for each member variable
