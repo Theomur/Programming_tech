@@ -18,6 +18,27 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\..\..\..\downloads\data.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Children.cpp" />
+    <ClCompile Include="GrandParents.cpp" />
+    <ClCompile Include="Keeper.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="Parents.cpp" />
+    <ClCompile Include="You.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Children.h" />
+    <ClInclude Include="GrandParents.h" />
+    <ClInclude Include="Keeper.h" />
+    <ClInclude Include="Menu.h" />
+    <ClInclude Include="Parents.h" />
+    <ClInclude Include="Person.h" />
+    <ClInclude Include="You.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>

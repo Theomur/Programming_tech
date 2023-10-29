@@ -1,19 +1,21 @@
-#include "FamilyTree.h"
-
+#pragma once
+//#include "libra.h"
+#include "Person.h"
+using namespace std;
 class Keeper {
 private:
-    int size;
-    FamilyTree** familyTreeList;
-
+	int size = 0;
+	El* head = NULL;
 public:
-    Keeper();
-    ~Keeper();
-    void addFamilyMember();
-    void deleteFamilyMember(int index);
-    void displayFamilyTree();
-    void redactFamilyMember(int index);
-    void saveToFile();
-    void restoreFromFile();
-};
+	Keeper();
+	Keeper(int size);
+	~Keeper();
 
-class Exception : public std::exception {};
+	Person* operator[] (int id);
+
+	int get_size();
+	void insert(Person* new_data);
+	void remove(int id);
+	void save();
+	void load();
+};
