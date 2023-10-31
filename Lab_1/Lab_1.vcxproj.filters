@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="..\..\..\..\..\downloads\data.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="Children.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>

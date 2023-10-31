@@ -1,5 +1,4 @@
 #pragma once
-//#include "libra.h"
 #include "Person.h"
 using namespace std;
 class Parents : public Person {

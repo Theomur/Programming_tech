@@ -19,9 +19,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="..\..\..\..\..\downloads\data.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="Children.cpp" />
     <ClCompile Include="GrandParents.cpp" />
     <ClCompile Include="Keeper.cpp" />

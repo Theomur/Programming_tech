@@ -1,4 +1,3 @@
-//#include "libra.h"
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -41,7 +40,9 @@ Person* Keeper::operator[] (const int id) {
 		return (buffer->data);
 	}
 }
+
 int Keeper::get_size() { return size; }
+
 void Keeper::insert(Person* new_data) {
 	El* tmp;
 	tmp = new El;

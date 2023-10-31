@@ -1,5 +1,4 @@
 #pragma once
-//#include "libra.h"
 using namespace std;
 class Person {
 public:
