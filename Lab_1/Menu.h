@@ -20,5 +20,4 @@ public:
 	void load_from_file();
 	void delete_person();
 	void exit_from_programm();
-	void average();
 };

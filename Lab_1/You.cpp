@@ -85,10 +85,10 @@ void You::set_age(string age_ch)
 		cout << "Full Name: " << fullName << endl;
 		cout << "Parents: " << parents << endl;
 		cout << "Spouses: " << spouses << endl;
-		cout << "You " << children << endl;
-		cout << "Date Birhday " << dateBirh << endl;
-		cout << "Date Death " << dateDeath << endl;
-		cout << "Age " << age << endl;
+		cout << "Children: " << children << endl;
+		cout << "Birhday: " << dateBirh << endl;
+		cout << "Death Date: " << dateDeath << endl;
+		cout << "Age: " << age << endl;
 		cout << "------------------------------------" << endl;
 	}
 	void You::rewrite() 
