@@ -321,7 +321,8 @@ void KeeperN::Show()
 		cout << "Currently showing entry with the following phone number: "<< filter << endl << endl;
 	Note* current = this->head;
 	int cur_num;
-	this->sort();
+	if (this->GetSize())
+		this->sort();
 	int check = 0;
 	if (current != nullptr)
 	{

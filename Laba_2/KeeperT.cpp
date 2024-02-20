@@ -46,7 +46,7 @@ KeeperT::KeeperT()
 	ifstream fin("1.txt");
 	string str = "";
 	char separator[] = { '.', '?', '!', '…', '\0' };
-	char first_let[27] = { 'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
+	char first_let[37] = { 'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','1', '2', '3', '4', '5', '6', '7', '8', '9', '0' };
 	char symbol;
 	char prevsym = ' ';
 
